@@ -42,7 +42,7 @@ mutation createPerson {
 }
 ```
 
-## To query all person (mapped to table Persona)
+## To query all person (Person is mapped to collection Persona, name is mapped to field nombre)
 ```
 {
   allPersons {
@@ -52,7 +52,7 @@ mutation createPerson {
 }
 ```
 
-## To query all students (mapped to table Persona with ocupacion=estudiante)
+## To query all students (Student is mapped to collection Persona with field ocupacion=estudiante, name is mapped to  field nombre)
 ```
 {
   allStudents {

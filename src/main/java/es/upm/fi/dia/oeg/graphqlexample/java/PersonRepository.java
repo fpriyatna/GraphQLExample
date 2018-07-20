@@ -1,4 +1,4 @@
-package com.howtographql.hackernews;
+package es.upm.fi.dia.oeg.graphqlexample.java;
 
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;

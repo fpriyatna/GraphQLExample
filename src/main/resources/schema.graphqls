@@ -4,43 +4,12 @@ schema {
 }
 
 type Query {
-    allLinks: [Link]
     allPersons: [Person]
     allStudents: [Student]
 }
 
 type Mutation {
-    #The new mutation
-    createUser(name: String!, authProvider: AuthData!): User
-    createLink(url: String!, description: String!): Link
-    signinUser(auth: AuthData): SigninPayload
     createPerson(name: String!, occupation: String): Person
-}
-
-type Link {
-    id: ID!
-    url: String!
-    description: String
-}
-
-
-
-
-    type User {
-      id: ID!
-      name: String!
-      email: String
-      password: String
-    }
-
-    input AuthData {
-      email: String!
-      password: String!
-    }
-
-type SigninPayload {
-  token: String
-  user: User
 }
 
 type Person {

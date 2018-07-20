@@ -24,3 +24,4 @@ hs_err_pid*
 .idea/
 hackernews-graphql-java.iml
 target/
+es.upm.fi.dia.oeg.graphqlexample.java.iml

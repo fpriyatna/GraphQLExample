@@ -1,16 +1,10 @@
-# ainn-request
-Request and Answers for Mappings
+# GraphQLExample
+Example of using GraphQL with Java and MongoDB
 
 # To install
-1. You need to install pip https://pip.pypa.io/en/stable/installing/
-2. Create virtual environment http://docs.python-guide.org/en/latest/dev/virtualenvs/
-3. Access the environment variable
-4. Install the requirements: run `pip install -r requirements.txt` in the app directory
-5. `python app.py`
-6. Access http://localhost:5000/graphql on your browser
-
-
-
+1. ``` git clone https://github.com/fpriyatna/GraphQLExample ```
+2. ``` mvn clean jetty:run ```
+3. access http://localhost:8080 from your browser
 
 # Examples
 

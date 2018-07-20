@@ -16,8 +16,8 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
 
     static {
         MongoDatabase mongo2 = new MongoClient().getDatabase("universidad");
-        personResolver = new PersonResolver(mongo2.getCollection("personas"));
-        studentResolver = new StudentResolver(mongo2.getCollection("personas"));
+        personResolver = new PersonResolver(mongo2.getCollection(PersonResolver.COLLECTION_SOURCE));
+        studentResolver = new StudentResolver(mongo2.getCollection(StudentResolver.COLLECTION_SOURCE));
     }
 
     public GraphQLEndpoint() {

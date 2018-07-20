@@ -11,6 +11,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class StudentResolver {
     private final MongoCollection<Document> students;
+    static final String COLLECTION_SOURCE = "personas";
 
     public StudentResolver(MongoCollection<Document> students) {
         this.students = students;
@@ -31,7 +32,7 @@ public class StudentResolver {
 
     public void saveStudent(Student student) {
         Document doc = new Document();
-        doc.append("nombre", student.getName());
+        doc.append("nombre", student.getName()); //map Student.name to personas.nombre
         students.insertOne(doc);
     }
 

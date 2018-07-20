@@ -9,10 +9,10 @@ import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
-public class PersonRepository {
+public class PersonResolver {
     private final MongoCollection<Document> persons;
 
-    public PersonRepository(MongoCollection<Document> persons) {
+    public PersonResolver(MongoCollection<Document> persons) {
         this.persons = persons;
     }
 

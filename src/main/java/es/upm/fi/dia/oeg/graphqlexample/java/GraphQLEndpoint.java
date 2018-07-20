@@ -11,13 +11,13 @@ import graphql.servlet.SimpleGraphQLServlet;
 
 @WebServlet(urlPatterns = "/graphql")
 public class GraphQLEndpoint extends SimpleGraphQLServlet {
-    private static final PersonRepository personRepository;
-    private static final StudentRepository studentRepository;
+    private static final PersonResolver personResolver;
+    private static final StudentResolver studentResolver;
 
     static {
         MongoDatabase mongo2 = new MongoClient().getDatabase("universidad");
-        personRepository = new PersonRepository(mongo2.getCollection("personas"));
-        studentRepository = new StudentRepository(mongo2.getCollection("personas"));
+        personResolver = new PersonResolver(mongo2.getCollection("personas"));
+        studentResolver = new StudentResolver(mongo2.getCollection("personas"));
     }
 
     public GraphQLEndpoint() {
@@ -28,8 +28,8 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
         return SchemaParser.newParser()
                 .file("schema.graphqls")
                 .resolvers(
-                        new Query(personRepository, studentRepository),
-                        new Mutation(personRepository))
+                        new Query(personResolver, studentResolver),
+                        new Mutation(personResolver))
                 .build()
                 .makeExecutableSchema();
     }

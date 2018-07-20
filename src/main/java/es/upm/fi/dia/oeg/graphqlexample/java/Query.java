@@ -6,17 +6,17 @@ import java.util.List;
 
 public class Query implements GraphQLRootResolver {
 
-    private final PersonRepository personRepository;
-    private final StudentRepository studentRepository;
+    private final PersonResolver personResolver;
+    private final StudentResolver studentResolver;
 
     public Query(
-            PersonRepository personRepository,
-            StudentRepository studentRepository
+            PersonResolver personResolver,
+            StudentResolver studentResolver
     ) {
-        this.personRepository = personRepository;
-        this.studentRepository = studentRepository;
+        this.personResolver = personResolver;
+        this.studentResolver = studentResolver;
     }
 
-    public List<Person> allPersons() { return personRepository.getAllPersons(); }
-    public List<Student> allStudents() { return studentRepository.getAllStudents(); }
+    public List<Person> allPersons() { return personResolver.getAllPersons(); }
+    public List<Student> allStudents() { return studentResolver.getAllStudents(); }
 }
